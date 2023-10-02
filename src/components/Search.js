@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Kiisu } from "./Kiisu";
 
 const apiURL = "https://api.thecatapi.com/v1/breeds";
-//const pictureURL = 'https://cdn2.thecatapi.com/images'
 const API_KEY =
   "";
 const address = `${apiURL}?api_key=${API_KEY}`;
@@ -13,6 +12,7 @@ export const Search = () => {
   const [breedsData, setBreedsData] = useState([]);
   const [breedPicture, setBreedPicture] = useState("");
   const [catInfo, setCatInfo] = useState("")
+  const [catTemperament, setCatTemperament] = useState("")
 
   const handleBreedChange = (e) => {
     setBreed(e.target.value);
@@ -30,6 +30,8 @@ export const Search = () => {
           setBreedPicture(breedImage);
           const catType = selectedBreedData.description
           setCatInfo(catType)
+          const catTemp = selectedBreedData.temperament
+          setCatTemperament(catTemp)
         }
         setBreedsData(response.data.map((breedData) => breedData.name));
       })
@@ -43,7 +45,7 @@ export const Search = () => {
     <div className="input-container">
       <label name="input-container">Breed:</label>
       <select id="breedSelect" onChange={handleBreedChange} value={breed || ""}>
-        <option value="">Select Breed:</option>
+        <option value="">Select Breed</option>
         {breedsData.map((breed) => (
           <option key={breed} value={breed}>
             {breed}
@@ -51,7 +53,11 @@ export const Search = () => {
         ))}
       </select>
       <img src={breedPicture} alt='' />
+      <div className="temperament">
+      {catTemperament}
+      </div>
       {catInfo}
+      
       <Kiisu />
     </div>
   );

@@ -6,9 +6,6 @@ function App() {
   return (
     <div className="container">
       <Search />
-      
-
-      Tähän tulee kiisuja
     </div>
   );
 }
