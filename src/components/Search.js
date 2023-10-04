@@ -11,8 +11,8 @@ export const Search = () => {
   const [breed, setBreed] = useState("");
   const [breedsData, setBreedsData] = useState([]);
   const [breedPicture, setBreedPicture] = useState("");
-  const [catInfo, setCatInfo] = useState("")
-  const [catTemperament, setCatTemperament] = useState("")
+  const [catInfo, setCatInfo] = useState("");
+  const [catTemperament, setCatTemperament] = useState("");
 
   const handleBreedChange = (e) => {
     setBreed(e.target.value);
@@ -28,10 +28,10 @@ export const Search = () => {
         if (selectedBreedData) {
           const breedImage = selectedBreedData.image.url;
           setBreedPicture(breedImage);
-          const catType = selectedBreedData.description
-          setCatInfo(catType)
-          const catTemp = selectedBreedData.temperament
-          setCatTemperament(catTemp)
+          const catType = selectedBreedData.description;
+          setCatInfo(catType);
+          const catTemp = selectedBreedData.temperament;
+          setCatTemperament(catTemp);
         }
         setBreedsData(response.data.map((breedData) => breedData.name));
       })
@@ -52,12 +52,10 @@ export const Search = () => {
           </option>
         ))}
       </select>
-      <img src={breedPicture} alt='' />
-      <div className="temperament">
-      {catTemperament}
-      </div>
+      <img src={breedPicture} alt="" />
+      <div className="temperament">{catTemperament}</div>
       {catInfo}
-      
+
       <Kiisu />
     </div>
   );

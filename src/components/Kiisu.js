@@ -18,9 +18,9 @@ export const Kiisu = () => {
           const image = response.data[0].url;
           setCatImage(image);
           setIsLoading(false);
-          
         }
       })
+
       .catch((error) => {
         alert(error);
       });
