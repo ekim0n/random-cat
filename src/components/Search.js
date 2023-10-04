@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Kiisu } from "./Kiisu";
 
 const apiURL = "https://api.thecatapi.com/v1/breeds";
-const API_KEY =
-  "";
+const API_KEY = "";
 const address = `${apiURL}?api_key=${API_KEY}`;
 
 export const Search = () => {

@@ -1,5 +1,3 @@
-//https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=gpN-ReBkp
-
 import "../App.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
