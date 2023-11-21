@@ -1,4 +1,4 @@
-Harjoitustyö 2
+
 
 Kun sivuston lataa, se renderoi satumavaraisen kissan kuvan.
 
